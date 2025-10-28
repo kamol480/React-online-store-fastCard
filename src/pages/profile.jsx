@@ -6,13 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 export default function ProfilePage() {
   const data = useSelector((state) => state.crud.userById);
   const dispatch = useDispatch();
+  
 
   useEffect(() => {
     dispatch(getUserById());
   }, [dispatch]);
 
   return (
-      <div className="p-10">
+     <div className="p-10">
       <div className="text-sm text-gray-500 mb-6 flex gap-2">
         <span className="cursor-pointer hover:underline">Home</span>
         <span>/</span>

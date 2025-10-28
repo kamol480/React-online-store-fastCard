@@ -22,7 +22,7 @@ const App = () => {
       element: <Layout />,
       children: [
         {
-          index: true,
+          path:"/home",
           element: <Home />,
         },
         {
@@ -42,7 +42,7 @@ const App = () => {
           element: <Product />,
         },
         {
-          path: "/login",
+          index:true,
           element: <Login />,
         },
          {

@@ -52,7 +52,7 @@ const Layout = () => {
           } sm:flex flex-col sm:flex-row w-full sm:w-auto gap-4 sm:gap-8 mt-4 sm:mt-0 dark:text-gray-200`}
         >
           <Link
-            to="/"
+            to="/home"
             onClick={() => setMenuOpen(false)}
             className="hover:text-blue-500 transition-colors"
           >
