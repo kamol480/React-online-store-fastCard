@@ -13,11 +13,16 @@ let checking = {
 };
 
 export let register = createAsyncThunk("crud/register", async (regObj) => {
-  let { data } = await axios.post(
+  try {
+    let { data } = await axios.post(
     "https://store-api.softclub.tj/Account/register",
     regObj
   );
   return data;
+  } catch (error) {
+    console.error(error);
+    
+  }
 });
 
 export let getData = createAsyncThunk("get/products", async () => {

@@ -14,13 +14,13 @@ const Register = () => {
     const target = event.target;
     const regObj = {
       userName: target["inpName"].value,
-      phoneNumber: "target['inpPhone'].value",
+      phoneNumber: target['inpPhone'].value,
       email: target["inpEmail"].value,
       password: target["inpPassword"].value,
       confirmPassword: target["inpPassword"].value,
     };
 
-    dispatch(registerThunk(regObj)).then(() => navigate("/login"));
+    dispatch(registerThunk(regObj)).then(() => navigate("/"));
   }
 
   return (
