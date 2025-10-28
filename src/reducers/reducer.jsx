@@ -4,7 +4,20 @@ import { jwtDecode } from "jwt-decode";
 import { Stethoscope } from "lucide-react";
 
 let api = "https://store-api.softclub.tj";
-let access_token = localStorage.getItem("token");
+let access_token = null;
+let sId = null;
+
+if (typeof window !== "undefined") {
+  access_token = localStorage.getItem("token");
+
+  if (access_token) {
+    try {
+      sId = jwtDecode(access_token);
+    } catch (err) {
+      console.error("Invalid token:", err);
+    }
+  }
+}
 
 let checking = {
   headers: {
@@ -35,7 +48,6 @@ export let Brand = createAsyncThunk("get/brand", async () => {
   return data.data;
 });
 
-let sId = jwtDecode(access_token);
 
 export let getUserById = createAsyncThunk("get/getUserById", async () => {
   let { data } = await axios.get(
